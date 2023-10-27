@@ -1,0 +1,16 @@
+<resources>
+    <!-- 기본 앱 테마 -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- 기타 스타일 정의 -->
+
+        <!-- DatePicker 스타일 -->
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+    <!-- DatePicker 스타일 정의 -->
+    <style name="MyDatePickerStyle" parent="android:Widget.DatePicker">
+        <item name="android:calendarTextColor">@color/black</item> <!-- 캘린더 텍스트 색상 -->
+        <item name="android:headerBackground">@color/main_b</item> <!-- 헤더 배경 색상 -->
+        <item name="android:datePickerMode">spinner</item> <!-- 데이트 피커 모드 -->
+    </style>
+</resources>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    tools:context=".SignupActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/modify_layout"
+        android:orientation="horizontal"
+        android:background="@color/main_b"
+        android:gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_txt1"
+            android:textSize="40sp"
+            android:fontFamily="@font/nanum"
+            android:text="강의 정보 수정"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/modify_layout2"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_txt2"
+            android:layout_marginStart="10dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/nanum"
+            android:text="강의명"
+            android:textColor="@color/main_b"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_name"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:hint="강의명을 입력하세요"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/modify_layout3"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_txt3"
+            android:layout_marginStart="10dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/nanum"
+            android:text="강의시간"
+            android:textColor="@color/main_b"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_time"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:hint="강의시간을 입력하세요"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/modify_layout4"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_txt4"
+            android:layout_marginStart="10dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/nanum"
+            android:text="강의장소"
+            android:textColor="@color/main_b"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_place"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:hint="강의장소를 입력하세요"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/modify_layout5"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_txt5"
+            android:layout_marginStart="10dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/nanum"
+            android:text="강의번호"
+            android:textColor="@color/main_b"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_num"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:hint="강의번호를 입력하세요"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/modify_layout6"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_marginTop="10dp">
+        <Button
+            android:id="@+id/btn_kill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_marginEnd="10dp"
+            android:text="강의 삭제"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanum"/>
+
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_marginEnd="10dp"
+            android:text="수정"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanum"/>
+    </LinearLayout>
+</LinearLayout>
+

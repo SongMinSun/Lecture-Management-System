@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "397019160345",
+    "firebase_url": "https://face-fda7e-default-rtdb.firebaseio.com",
+    "project_id": "face-fda7e",
+    "storage_bucket": "face-fda7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397019160345:android:252443c549e0952d6e6f88",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397019160345-451iic2umfdqknos8cffgcp190s19bk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiuVBe1muzr7GEfb2txG5_IvwvpphhRZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397019160345-451iic2umfdqknos8cffgcp190s19bk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
