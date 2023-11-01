@@ -18,7 +18,8 @@ public class logoActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(logoActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
-        }, 2500);
+        }, 3000);
     }
 }

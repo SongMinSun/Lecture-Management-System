@@ -12,11 +12,11 @@
         android:id="@+id/signup_txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:text="SIGN UP"
         android:fontFamily="@font/nanum"
         android:textColor="@color/main_b"
-        android:textSize="100px"
+        android:textSize="150px"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -24,15 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="80dp">
 
-        <EditText
-            android:id="@+id/et_name"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="24dp"
-            android:fontFamily="@font/nanum"
-            android:hint="이름을 입력하세요." />
 
         <EditText
             android:id="@+id/et_email"
@@ -40,35 +33,34 @@
             android:layout_height="50dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/nanum"
+            android:inputType="textEmailAddress"
             android:hint="이메일을 입력하세요."></EditText>
 
         <EditText
             android:id="@+id/et_pass"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="19dp"
             android:fontFamily="@font/nanum"
+            android:inputType="textPassword"
             android:hint="비밀번호를 입력하세요(5~12자)"></EditText>
 
         <EditText
-            android:id="@+id/et_phone"
+            android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginBottom="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
             android:fontFamily="@font/nanum"
-            android:hint="전화번호를 입력하세요."></EditText>
+            android:inputType="textPersonName"
+            android:hint="이름을 입력하세요." />
 
-        <EditText
-            android:id="@+id/et_birth"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:fontFamily="@font/nanum"
-            android:layout_marginBottom="85dp"
-            android:hint="생년월일를 입력하세요."></EditText>
         <Button
             android:id="@+id/signup_btn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/nanum"
             android:text="회원가입"
             android:textColor="@color/white"

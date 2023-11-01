@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth; //파이어베이스 인증
     private DatabaseReference mDatabaseRef ; //실시간데이터베이스
     private EditText Id_edit,Pass_edit;
+    private Button signButton,loginButton;
 
 
     @Override
@@ -30,11 +31,42 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button signButton= (Button) findViewById(R.id.sign_btn);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference();
+
+        Id_edit = findViewById(R.id.Id_edit);
+        Pass_edit = findViewById(R.id.Pass_edit);
+        loginButton = findViewById(R.id.login_btn);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //로그인 요청
+                String strEmail = Id_edit.getText().toString();
+                String strPwd = Pass_edit.getText().toString();
+                
+                mFirebaseAuth.signInWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            // 로그인 성공 !
+                            Toast.makeText(LoginActivity.this,"로그인 성공!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish(); //현재 액티비티 파괴
+                        } else{
+                            Toast.makeText(LoginActivity.this,"로그인 실패...", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
+        signButton = findViewById(R.id.sign_btn);
         signButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+                //회원가입 요청
                 Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivity(intent);
             }
