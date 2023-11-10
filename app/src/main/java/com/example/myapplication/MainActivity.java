@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button cmbtn, chbtn, ambtn, ahbtn, logout;
+    private Button cmbtn, chbtn, ahbtn, logout;
     private TextView main_name;
     private FirebaseAuth mFirebaseAuth; //파이어베이스 인증
     private DatabaseReference mDatabaseRef; //실시간 데이터 베이스
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         cmbtn = findViewById(R.id.main_cmbtn);
         chbtn = findViewById(R.id.main_chbtn);
-        ambtn = findViewById(R.id.main_ambtn);
         ahbtn = findViewById(R.id.main_ahbtn);
         logout = findViewById(R.id.main_logout);
 
@@ -62,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     // 데이터베이스에서 데이터 읽기가 실패한 경우
                     Log.w("TAG", "데이터베이스에서 데이터 읽기 실패", databaseError.toException());
                 }
+
             });
         }
 
@@ -72,17 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         chbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(MainActivity.this, chActivity.class);
-                startActivity(intent);
-            }
-        });
-        ambtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, amActivity.class);
                 startActivity(intent);
             }
         });
@@ -106,3 +100,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+

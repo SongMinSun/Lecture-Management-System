@@ -22,36 +22,16 @@
             android:id="@+id/cm_txt1"
             android:textSize="40sp"
             android:fontFamily="@font/nanum"
-            android:text="집중도 측정"
+            android:text="출결과 집중도 측정"
             android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/classBtn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/cm_scroll">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cm_layout2"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/cm_btn1"
-                android:layout_width="350dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/button_background"
-                android:text="강의 1"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

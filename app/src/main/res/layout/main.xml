@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,26 +45,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/main_blayout1"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:gravity="center">
 
         <Button
             android:id="@+id/main_cmbtn"
-            android:layout_width="170dp"
+            android:layout_width="360dp"
             android:layout_height="100dp"
             android:background="@drawable/button_background"
-            android:text="집중도 체크"
+            android:text="수업 시작하기"
             android:textColor="@color/white"
-            android:textSize="20sp"/>
-
-        <Button
-            android:id="@+id/main_chbtn"
-            android:layout_width="170dp"
-            android:layout_height="100dp"
-            android:background="@drawable/button_background"
-            android:text="집중도 내역 확인"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/white"
+            android:fontFamily="@font/he"
             android:textSize="20sp"/>
     </LinearLayout>
 
@@ -76,12 +68,13 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/main_ambtn"
+            android:id="@+id/main_chbtn"
             android:layout_width="170dp"
             android:layout_height="100dp"
             android:background="@drawable/button_background"
             android:text="출석 체크"
             android:textColor="@color/white"
+            android:fontFamily="@font/he"
             android:textSize="20sp"/>
 
         <Button
@@ -92,6 +85,7 @@
             android:text="출결 내역 확인"
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
+            android:fontFamily="@font/he"
             android:textSize="20sp"/>
     </LinearLayout>
 
@@ -110,6 +104,7 @@
             android:background="@drawable/button_background"
             android:text="마이페이지"
             android:textColor="@color/white"
+            android:fontFamily="@font/he"
             android:textSize="20sp"/>
 
         <Button
@@ -120,7 +115,9 @@
             android:text="로그아웃"
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:fontFamily="@font/he"
+            />
     </LinearLayout>
 
 
