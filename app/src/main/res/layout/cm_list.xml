@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    tools:context=".cmActivity"
+    tools:context=".MainActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/cm_layout1"
         android:orientation="horizontal"
-        android:background="@color/main_b"
+        android:background="@drawable/title"
         android:gravity="center">
 
 
@@ -22,16 +22,39 @@
             android:id="@+id/cm_txt1"
             android:textSize="40sp"
             android:fontFamily="@font/nanum"
-            android:text="출결과 집중도 측정"
+            android:text="강의 선택"
             android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/classBtn"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:id="@+id/cm_layout2"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/classBtn"
+            android:layout_width="match_parent"
+            android:layout_height="490dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/logoutBtn"
+            android:layout_height="65dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/he"
+            android:text="로그아웃"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

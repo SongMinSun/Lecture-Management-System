@@ -3,15 +3,14 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -20,85 +19,94 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button cmbtn, chbtn, ahbtn, logout;
-    private TextView main_name;
-    private FirebaseAuth mFirebaseAuth; //파이어베이스 인증
-    private DatabaseReference mDatabaseRef; //실시간 데이터 베이스
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private ArrayList<ClassAccount> arrayList;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth mFirebaseAuth;
+    private Button logout;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FirebaseApp.initializeApp(getApplicationContext());
-        setContentView(R.layout.main);
+        setContentView(R.layout.cm_list);
 
+        logout = findViewById(R.id.logoutBtn);
         mFirebaseAuth = FirebaseAuth.getInstance();
-
-        cmbtn = findViewById(R.id.main_cmbtn);
-        chbtn = findViewById(R.id.main_chbtn);
-        ahbtn = findViewById(R.id.main_ahbtn);
-        logout = findViewById(R.id.main_logout);
-
         FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
+
+        recyclerView = findViewById(R.id.classBtn);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        arrayList = new ArrayList<>();
 
         if (currentUser != null) {
             String userId = currentUser.getUid();
-            DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Member").child(userId);
 
-            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            DatabaseReference database = FirebaseDatabase.getInstance().getReference("class");
+
+            database.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        String userName = dataSnapshot.child("name").getValue(String.class);
-                        TextView nameTextView = findViewById(R.id.main_name); // TextView의 ID를 실제 레이아웃에서 정의한 ID로 바꿔주세요
-                        nameTextView.setText(userName);
+                    arrayList.clear();
+
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        Log.d("MainActivity", "Snapshot: " + snapshot.toString());
+                        String classIdToken = snapshot.child("idToken").getValue(String.class);
+                        if (classIdToken != null && classIdToken.equals(userId)) {
+                            ClassAccount classAccount = new ClassAccount();
+                            classAccount.setClassname(snapshot.child("classname").getValue(String.class));
+                            classAccount.setClassnum(String.valueOf(snapshot.child("classnum").getValue()));
+                            classAccount.setClassday(snapshot.child("classday").getValue(String.class));
+                            classAccount.setClasstime(snapshot.child("classtime").getValue(String.class));
+                            classAccount.setIdToken(classIdToken);
+
+                            arrayList.add(classAccount);
+                        }
                     }
+
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    // 데이터베이스에서 데이터 읽기가 실패한 경우
-                    Log.w("TAG", "데이터베이스에서 데이터 읽기 실패", databaseError.toException());
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.e("MainActivity", String.valueOf(error.toException()));
                 }
-
             });
+
+            adapter = new ClassAdapter(arrayList, MainActivity.this);
+
+            // 아이템 클릭 이벤트 처리
+            ((ClassAdapter) adapter).setOnItemClickListener(new ClassAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(int position) {
+                    ClassAccount selectedItem = arrayList.get(position);
+
+                    Intent intent = new Intent(MainActivity.this, SelectActivity.class);
+                    intent.putExtra("classname", selectedItem.getClassname());
+                    intent.putExtra("classnum", selectedItem.getClassnum());
+                    intent.putExtra("classday", selectedItem.getClassday());
+                    intent.putExtra("classtime", selectedItem.getClasstime());
+                    startActivity(intent);
+                }
+            });
+
+            recyclerView.setAdapter(adapter);
         }
 
-        cmbtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, cmActivity.class);
-                startActivity(intent);
-            }
-        });
+        logout.setOnClickListener(view -> {
+            mFirebaseAuth.signOut();
+            Toast.makeText(MainActivity.this,"로그아웃 완료",Toast.LENGTH_SHORT).show();
 
-        chbtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, chActivity.class);
-                startActivity(intent);
-            }
-        });
-        ahbtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, ahActivity.class);
-                startActivity(intent);
-            }
-        });
-        logout.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                mFirebaseAuth.signOut();
-                Toast.makeText(MainActivity.this,"로그아웃 완료",Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 }
-
-

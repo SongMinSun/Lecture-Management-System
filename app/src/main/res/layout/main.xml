@@ -4,48 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    tools:context=".MainActivity"
+    tools:context=".SelectActivity"
     android:orientation="vertical"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:id="@+id/main_layout1"
         android:orientation="horizontal"
-        android:background="@drawable/title">
+        android:background="@drawable/title"
+        android:gravity="center">
 
         <TextView
+            android:id="@+id/ClassName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/main_name"
-            android:textSize="40sp"
-            android:fontFamily="@font/nanum"
+            android:fontFamily="@font/he"
             android:text="000"
+            android:layout_marginTop="5dp"
             android:textColor="@color/white"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"/>
+            android:textSize="40sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/main_txt1"
-            android:textSize="40sp"
-            android:fontFamily="@font/nanum"
-            android:text="교수"
-            android:textColor="@color/white"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:id="@+id/main_blayout1"
-        android:layout_marginTop="80dp"
         android:gravity="center">
 
         <Button
@@ -57,68 +44,27 @@
             android:textColor="@color/white"
             android:fontFamily="@font/he"
             android:textSize="20sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/main_blayout2"
-        android:layout_marginTop="50dp"
-        android:gravity="center">
-
         <Button
             android:id="@+id/main_chbtn"
-            android:layout_width="170dp"
+            android:layout_width="360dp"
             android:layout_height="100dp"
             android:background="@drawable/button_background"
-            android:text="출석 체크"
+            android:text="출결 내역 확인"
             android:textColor="@color/white"
             android:fontFamily="@font/he"
+            android:layout_marginTop="60dp"
             android:textSize="20sp"/>
 
         <Button
             android:id="@+id/main_ahbtn"
-            android:layout_width="170dp"
+            android:layout_width="360dp"
             android:layout_height="100dp"
             android:background="@drawable/button_background"
-            android:text="출결 내역 확인"
-            android:layout_marginStart="20dp"
+            android:text="집중도 내역 확인"
             android:textColor="@color/white"
             android:fontFamily="@font/he"
+            android:layout_marginTop="60dp"
             android:textSize="20sp"/>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/main_blayout3"
-        android:layout_marginTop="50dp"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/main_mypage"
-            android:layout_width="170dp"
-            android:layout_height="100dp"
-            android:background="@drawable/button_background"
-            android:text="마이페이지"
-            android:textColor="@color/white"
-            android:fontFamily="@font/he"
-            android:textSize="20sp"/>
-
-        <Button
-            android:id="@+id/main_logout"
-            android:layout_width="170dp"
-            android:layout_height="100dp"
-            android:background="@drawable/button_background"
-            android:text="로그아웃"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:fontFamily="@font/he"
-            />
-    </LinearLayout>
-
 
 </LinearLayout>
