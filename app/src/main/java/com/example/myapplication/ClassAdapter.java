@@ -43,12 +43,14 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHol
         holder.cm_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mListener != null) {
-                    mListener.onItemClick(position);
+                int adapterPosition = holder.getAdapterPosition();
+                if (mListener != null && adapterPosition != RecyclerView.NO_POSITION) {
+                    mListener.onItemClick(adapterPosition);
                 }
             }
         });
     }
+
 
     @Override
     public int getItemCount() {

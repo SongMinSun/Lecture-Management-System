@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class CmlistActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
             DatabaseReference database = FirebaseDatabase.getInstance().getReference("class");
 
-            database.addValueEventListener(new ValueEventListener() {
+            database.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     arrayList.clear();
 
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        Log.d("MainActivity", "Snapshot: " + snapshot.toString());
+                        Log.d("CmlistActivity", "Snapshot: " + snapshot.toString());
                         String classIdToken = snapshot.child("idToken").getValue(String.class);
                         if (classIdToken != null && classIdToken.equals(userId)) {
                             ClassAccount classAccount = new ClassAccount();
@@ -76,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-                    Log.e("MainActivity", String.valueOf(error.toException()));
+                    Log.e("CmlistActivity", String.valueOf(error.toException()));
                 }
             });
 
-            adapter = new ClassAdapter(arrayList, MainActivity.this);
+            adapter = new ClassAdapter(arrayList, CmlistActivity.this);
 
             // 아이템 클릭 이벤트 처리
             ((ClassAdapter) adapter).setOnItemClickListener(new ClassAdapter.OnItemClickListener() {
@@ -88,12 +88,13 @@ public class MainActivity extends AppCompatActivity {
                 public void onItemClick(int position) {
                     ClassAccount selectedItem = arrayList.get(position);
 
-                    Intent intent = new Intent(MainActivity.this, SelectActivity.class);
+                    Intent intent = new Intent(CmlistActivity.this, SelectActivity.class);
                     intent.putExtra("classname", selectedItem.getClassname());
                     intent.putExtra("classnum", selectedItem.getClassnum());
                     intent.putExtra("classday", selectedItem.getClassday());
                     intent.putExtra("classtime", selectedItem.getClasstime());
                     startActivity(intent);
+
                 }
             });
 
@@ -102,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
 
         logout.setOnClickListener(view -> {
             mFirebaseAuth.signOut();
-            Toast.makeText(MainActivity.this,"로그아웃 완료",Toast.LENGTH_SHORT).show();
+            Toast.makeText(CmlistActivity.this,"로그아웃 완료",Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            Intent intent = new Intent(CmlistActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         });
