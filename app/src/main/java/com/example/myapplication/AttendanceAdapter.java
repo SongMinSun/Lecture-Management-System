@@ -1,19 +1,20 @@
 package com.example.myapplication;
+// AttendanceAdapter.java
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-
 public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.AttendViewHolder> {
 
     private ArrayList<AttendanceAccount> arrayList;
     private Context context;
-    private OnItemClickListener mListener; // 인터페이스 변수 추가
+    private OnItemClickListener mListener;
 
     public AttendanceAdapter(ArrayList<AttendanceAccount> arrayList, Context context) {
         this.arrayList = arrayList;
@@ -41,17 +42,17 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
         holder.studentnum.setText(arrayList.get(position).getStudentnum());
         holder.attend.setText(arrayList.get(position).getAttend());
 
-        // 아이템 뷰가 클릭되었을 때의 동작
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        // Modify 버튼 클릭 이벤트 처리
+        holder.modify_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int adapterPosition = holder.getAdapterPosition();
-                if (mListener != null && adapterPosition != RecyclerView.NO_POSITION) {
-                    mListener.onItemClick(adapterPosition);
+                if (mListener != null) {
+                    mListener.onItemClick(holder.getAdapterPosition());
                 }
             }
         });
     }
+
 
     @Override
     public int getItemCount() {
@@ -60,12 +61,14 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.At
 
     public class AttendViewHolder extends RecyclerView.ViewHolder {
         TextView studentname, studentnum, attend;
+        Button modify_Btn;
 
         public AttendViewHolder(@NonNull View itemView) {
             super(itemView);
             this.studentname = itemView.findViewById(R.id.studentName);
             this.studentnum = itemView.findViewById(R.id.studentNum);
             this.attend = itemView.findViewById(R.id.attend);
+            this.modify_Btn = itemView.findViewById(R.id.modify_Btn);
         }
     }
 }

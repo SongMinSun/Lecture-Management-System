@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    tools:context=".ModifyAttendActivity"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:id="@+id/attend_modifyTitle"
+        android:text="출결 수정"
+        android:textColor="@color/main_bb"
+        android:textSize="40dp"
+        android:fontFamily="@font/he"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/modify_layout"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/info_layout">
+
+        <LinearLayout
+            android:layout_marginStart="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_layout2"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/modify_studentName"
+                android:text="학생 이름"
+                android:textSize="25dp"
+
+                android:textColor="@color/main_bb"
+                android:fontFamily="@font/nanum"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/modify_studentName2"
+                android:text="학생 이름"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:id="@+id/modify_layout3"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/modify_studentNum"
+                android:text="학생 학번"
+                android:textSize="25dp"
+                android:textColor="@color/main_bb"
+                android:fontFamily="@font/nanum"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/modify_studentNum2"
+                android:text="학생 학번"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_layout4"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/modify_attendState"
+                android:text="출석 상태"
+                android:textSize="25dp"
+                android:textColor="@color/main_bb"
+                android:fontFamily="@font/nanum"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/modify_attendState2"
+                android:text="출석 상태"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:id="@+id/modify_layout5"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_attendYes"
+            android:text="Yes로 수정하기"
+            android:textSize="20dp"
+            android:fontFamily="@font/nanum"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modify_attendNo"
+            android:text="No로 수정하기"
+            android:textSize="20dp"
+            android:fontFamily="@font/nanum"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_background"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -106,4 +106,15 @@
                 android:text="출석 여부" />
 
         </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:id="@+id/modify_Btn"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_background"
+        android:text="출결수정"
+        android:textColor="@color/white"
+        android:fontFamily="@font/nanum"/>
 </LinearLayout>
