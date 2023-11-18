@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    tools:context=".SignupActivity"
+    tools:context=".chActivity"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ch_detail_layout1"
+        android:id="@+id/ch_layout"
         android:orientation="horizontal"
         android:background="@color/main_b"
         android:gravity="center">
@@ -20,19 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ch_detail_txt1"
-            android:textSize="40sp"
-            android:fontFamily="@font/nanum"
-            android:text="강의 1"
-            android:textColor="@color/white"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="20dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ch_detail_txt2"
+            android:id="@+id/ch_txt"
             android:textSize="40sp"
             android:fontFamily="@font/nanum"
             android:text="집중도 내역"
@@ -43,148 +30,31 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <LinearLayout
+        android:id="@+id/ch_layout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/ch_detail_scroll">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
 
-        <LinearLayout
-            android:id="@+id/ch_detail_layout2"
+        <DatePicker
+            android:id="@+id/daPicker2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/info_layout"
-            android:layout_margin="10dp">
+            android:layout_gravity="center"
+            android:theme="@style/AppTheme" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ch_layout3"
+        android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/ch_detail_layout3"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/ch_student_name1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textColor="@color/main_b"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:text="학생 이름" />
-
-                <TextView
-                    android:id="@+id/ch_student_name2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="학생 이름" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ch_detail_layout4"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/ch_student_dept1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textColor="@color/main_b"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:text="학생 학과" />
-
-                <TextView
-                    android:id="@+id/ch_student_dept2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="학생 학과" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ch_detail_layout5"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/ch_student_num1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textColor="@color/main_b"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:text="학생 학번" />
-
-                <TextView
-                    android:id="@+id/ch_student_num2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="학생 학번" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/sinfo_layout6"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/ch_st"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textColor="@color/main_b"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="35dp"
-                    android:text="집중도" />
-
-                <TextView
-                    android:id="@+id/ch_st2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:text="Yes" />
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </ScrollView>
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </LinearLayout>

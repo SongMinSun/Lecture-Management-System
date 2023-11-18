@@ -69,6 +69,7 @@ public class ahActivity extends AppCompatActivity {
                 intent.putExtra("attend", selectedItem.getAttend());
                 intent.putExtra("classnum", selectedItem.getClassnum());
                 startActivity(intent);
+                finish();
             }
         });
         recyclerView.setAdapter(adapter);

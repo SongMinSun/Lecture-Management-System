@@ -1,4 +1,5 @@
 package com.example.myapplication;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,7 @@ public class ModifyAttendActivity extends AppCompatActivity {
     private TextView studentNameTextView, studentNumTextView, attendStateTextView;
     private Button attendYesButton, attendNoButton;
     private DatabaseReference databaseReference;
+    private String classNum;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class ModifyAttendActivity extends AppCompatActivity {
         String studentName = getIntent().getStringExtra("studentname");
         String studentnum = getIntent().getStringExtra("studentnum");
         String attend = getIntent().getStringExtra("attend");
-        String classnum = getIntent().getStringExtra("classnum");
+        classNum = getIntent().getStringExtra("classnum");
 
         studentNameTextView.setText(studentName);
         studentNumTextView.setText(studentnum);
@@ -69,6 +71,7 @@ public class ModifyAttendActivity extends AppCompatActivity {
                         attendStateTextView.setText(attend);
 
                         finish();
+
                     } else {
                         // 업데이트가 실패하면 에러 메시지를 로그에 기록합니다.
                         Log.e("ModifyAttendActivity", "Failed to update attendance state: " + task.getException());
