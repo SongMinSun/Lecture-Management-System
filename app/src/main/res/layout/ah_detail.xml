@@ -45,6 +45,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:theme="@style/AppTheme" />
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

@@ -29,15 +29,17 @@
 
     <LinearLayout
         android:id="@+id/login_layout1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
         <TextView
             android:id="@+id/login_txt2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/nanum"
@@ -49,26 +51,28 @@
         <EditText
             android:id="@+id/Id_edit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="이메일을 입력하세요."
             android:layout_marginStart="30dp"
             android:textSize="25sp"
+            android:background="@drawable/edit_background"
             android:inputType="textPersonName" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/login_layout2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="horizontal"
         android:layout_gravity="center">
 
         <TextView
             android:id="@+id/login_txt3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:fontFamily="@font/nanum"
             android:text="비밀번호"
             android:textColor="@color/main_b"
@@ -78,33 +82,38 @@
         <EditText
             android:id="@+id/Pass_edit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:textSize="25sp"
             android:hint="비밀번호를 입력하세요."
+            android:background="@drawable/edit_background"
             android:layout_marginStart="10dp"
             android:inputType="textPassword" />
     </LinearLayout>
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nanum"
         android:textColor="@color/white"
         android:text="로그인"
         android:background="@drawable/button_background"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:textSize="20sp"/>
 
     <Button
         android:id="@+id/sign_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="@font/nanum"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:text="회원가입"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:textColor="@color/white"
         android:background="@drawable/button_background"
         android:textSize="20sp" />

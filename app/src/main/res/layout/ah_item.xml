@@ -28,6 +28,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
+                android:fontFamily="@font/nanum"
                 android:text="학생 이름" />
 
             <TextView
@@ -39,6 +40,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/litenum"
                 android:text="학생 이름" />
         </LinearLayout>
 
@@ -60,6 +62,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="10dp"
+                android:fontFamily="@font/nanum"
                 android:text="학생 학번" />
 
             <TextView
@@ -71,6 +74,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/litenum"
                 android:text="학생 학번" />
         </LinearLayout>
 
@@ -86,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+                android:fontFamily="@font/nanum"
                 android:textColor="@color/main_b"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
@@ -102,6 +107,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/litenum"
                 android:layout_marginEnd="20dp"
                 android:text="출석 여부" />
 
@@ -112,6 +118,7 @@
         android:layout_gravity="right"
         android:id="@+id/modify_Btn"
         android:layout_marginEnd="10dp"
+        android:textSize="15dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/button_background"
         android:text="출결수정"

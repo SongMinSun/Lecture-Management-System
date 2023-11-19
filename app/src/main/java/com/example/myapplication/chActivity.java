@@ -57,28 +57,8 @@ public class chActivity extends AppCompatActivity {
         Intent intent = getIntent();
         classNum = intent.getStringExtra("classnum");
 
-        // 아래 코드 추가
-        ((ConcentrationAdapter) adapter).setOnItemClickListener(new ConcentrationAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                ConcentrationAccount selectedItem = arrayList.get(position);
-
-                Intent intent = new Intent(chActivity.this, ChstudentActivity.class);
-                intent.putExtra("studentname", selectedItem.getStudnetname());
-                intent.putExtra("studentnum", selectedItem.getStudentnum());
-                intent.putExtra("con_time", selectedItem.getCon_time());
-                intent.putExtra("classnum", selectedItem.getClassnum());
-                intent.putExtra("con_date", selectedItem.getCon_date());
-                intent.putExtra("high_count", selectedItem.getHigh_count());
-                intent.putExtra("low_count", selectedItem.getLow_count());
-
-                startActivity(intent);
-            }
-        });
-
-        recyclerView.setAdapter(adapter); // RecyclerView에 adapter를 설정해야 함
-
         loadAttendanceData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

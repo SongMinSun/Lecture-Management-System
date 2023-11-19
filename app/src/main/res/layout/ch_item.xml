@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="portrait"
-    tools:context=".ChstudentActivity"
+    tools:context=".chActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -28,18 +28,16 @@
                 android:layout_height="wrap_content"
                 android:text="이름"
                 android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginStart="20dp"
+                android:textColor="@color/main_b"
+                android:fontFamily="@font/nanum" />
 
             <TextView
                 android:id="@+id/student_name2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/nanum"
+                android:fontFamily="@font/litenum"
                 android:text="이름"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -57,18 +55,16 @@
                 android:layout_height="wrap_content"
                 android:text="학번"
                 android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginStart="20dp"
+                android:textColor="@color/main_b"
+                android:fontFamily="@font/nanum" />
 
             <TextView
                 android:id="@+id/student_num2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/nanum"
+                android:fontFamily="@font/litenum"
                 android:text="학번"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -86,10 +82,9 @@
                 android:layout_height="wrap_content"
                 android:text="집중도 high"
                 android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginStart="20dp"
+                android:textColor="@color/main_b"
+                android:fontFamily="@font/nanum" />
 
             <TextView
                 android:id="@+id/student_high2"
@@ -99,8 +94,7 @@
                 android:textSize="20dp"
                 android:layout_marginStart="30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
-                android:layout_marginBottom="10dp"/>
+                android:fontFamily="@font/litenum" />
 
             <TextView
                 android:id="@+id/student_high3"
@@ -110,8 +104,7 @@
                 android:textSize="20dp"
 
                 android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
-                android:layout_marginBottom="10dp"/>
+                android:fontFamily="@font/litenum" />
         </LinearLayout>
 
         <LinearLayout
@@ -126,8 +119,8 @@
                 android:layout_height="wrap_content"
                 android:text="집중도 low"
                 android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/black"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/main_b"
                 android:fontFamily="@font/nanum"
                 android:layout_marginBottom="10dp"/>
 
@@ -139,8 +132,7 @@
                 android:textSize="20dp"
                 android:layout_marginStart="30dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
-                android:layout_marginBottom="10dp"/>
+                android:fontFamily="@font/litenum" />
 
             <TextView
                 android:id="@+id/student_low3"
@@ -148,10 +140,8 @@
                 android:layout_height="wrap_content"
                 android:text="번"
                 android:textSize="20dp"
-
                 android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
-                android:layout_marginBottom="10dp"/>
+                android:fontFamily="@font/litenum" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -15,6 +15,7 @@
         android:textColor="@color/main_bb"
         android:textSize="40dp"
         android:fontFamily="@font/he"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center"/>
 
     <LinearLayout
@@ -23,15 +24,16 @@
         android:id="@+id/modify_layout"
         android:layout_margin="20dp"
         android:orientation="vertical"
-        android:background="@drawable/info_layout">
+        android:gravity="center"
+        android:background="@drawable/modify_layout">
 
         <LinearLayout
-            android:layout_marginStart="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/modify_layout2"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -39,21 +41,19 @@
                 android:id="@+id/modify_studentName"
                 android:text="학생 이름"
                 android:textSize="25dp"
-
                 android:textColor="@color/main_bb"
-                android:fontFamily="@font/nanum"
-                android:layout_marginTop="20dp"/>
+                android:fontFamily="@font/nanum" />
 
             <TextView
+                android:id="@+id/modify_studentName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/modify_studentName2"
-                android:text="학생 이름"
-                android:textSize="25dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
+                android:layout_gravity="center"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp" />
+                android:fontFamily="@font/litenum"
+                android:text="학생 이름"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -82,7 +82,7 @@
                 android:text="학생 학번"
                 android:textSize="25dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
+                android:fontFamily="@font/litenum"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"/>
 
@@ -114,7 +114,7 @@
                 android:text="출석 상태"
                 android:textSize="25dp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nanum"
+                android:fontFamily="@font/litenum"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"/>
         </LinearLayout>
@@ -124,7 +124,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/modify_layout5"
         android:orientation="vertical"
         android:layout_marginStart="20dp"

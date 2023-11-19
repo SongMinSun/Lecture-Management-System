@@ -9,10 +9,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:id="@+id/cm_layout1"
         android:orientation="horizontal"
-        android:background="@drawable/title"
         android:gravity="center">
 
 
@@ -23,7 +22,7 @@
             android:textSize="40sp"
             android:fontFamily="@font/nanum"
             android:text="강의 선택"
-            android:textColor="@color/white"
+            android:textColor="@color/main_b"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"/>
 
