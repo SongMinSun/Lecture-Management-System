@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ModifyAttendActivity extends AppCompatActivity {
 
     private TextView studentNameTextView, studentNumTextView, attendStateTextView;
-    private Button attendYesButton, attendNoButton;
+    private Button attendYesButton, attendNoButton, attendLateButton;
     private DatabaseReference databaseReference;
     private String classNum;
 
@@ -29,6 +29,7 @@ public class ModifyAttendActivity extends AppCompatActivity {
         attendStateTextView = findViewById(R.id.modify_attendState2);
         attendYesButton = findViewById(R.id.modify_attendYes);
         attendNoButton = findViewById(R.id.modify_attendNo);
+        attendLateButton = findViewById(R.id.modify_attendLate);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("attendance");
 
@@ -54,6 +55,14 @@ public class ModifyAttendActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // 출석 상태를 "no"로 업데이트합니다.
                 updateAttendState(studentName, studentnum, "no");
+            }
+        });
+
+        attendLateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 출석 상태를 "late"로 업데이트합니다.
+                updateAttendState(studentName, studentnum, "late");
             }
         });
     }
