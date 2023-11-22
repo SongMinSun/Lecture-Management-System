@@ -89,8 +89,22 @@ public class chActivity extends AppCompatActivity {
                     String databaseClassNum = (classNumObj != null) ? String.valueOf(classNumObj) : null;
                     String databaseConcentrationDate = snapshot.child("con_date").getValue(String.class);
 
+
+
                     if (classNum != null && classNum.equals(databaseClassNum) &&
                             isSameDate(year, month, day, databaseConcentrationDate)) {
+                        int highCount = Integer.parseInt(concentrationAccount.getHigh_count());
+                        int lowCount = Integer.parseInt(concentrationAccount.getLow_count());
+
+                        int totalCount = highCount + lowCount;
+
+                        if (totalCount > 0) {
+                            int percentage = (int) ((double) highCount / totalCount * 100);
+                            concentrationAccount.setPercentage(String.format(Locale.getDefault(), "%d%%", percentage));
+                        } else {
+                            concentrationAccount.setPercentage("N/A");
+                        }
+
                         arrayList.add(concentrationAccount);
                     }
                 }

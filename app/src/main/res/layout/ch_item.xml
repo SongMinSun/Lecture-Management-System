@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:screenOrientation="portrait"
     tools:context=".chActivity"
+    android:layout_margin="10dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -70,42 +71,6 @@
                 android:textSize="20dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-
-            <TextView
-                android:id="@+id/student_high"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="집중도 high"
-                android:textSize="20dp"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/main_b"
-                android:fontFamily="@font/nanum" />
-
-            <TextView
-                android:id="@+id/student_high2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="20dp"
-                android:layout_marginStart="30dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/litenum" />
-
-            <TextView
-                android:id="@+id/student_high3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="번"
-                android:textSize="20dp"
-
-                android:textColor="@color/black"
-                android:fontFamily="@font/litenum" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -114,10 +79,10 @@
             android:layout_margin="10dp">
 
             <TextView
-                android:id="@+id/student_low"
+                android:id="@+id/concentration1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="집중도 low"
+                android:text="집중도"
                 android:textSize="20dp"
                 android:layout_marginStart="20dp"
                 android:textColor="@color/main_b"
@@ -125,21 +90,12 @@
                 android:layout_marginBottom="10dp"/>
 
             <TextView
-                android:id="@+id/student_low2"
+                android:id="@+id/concentration2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
                 android:textSize="20dp"
                 android:layout_marginStart="30dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/litenum" />
-
-            <TextView
-                android:id="@+id/student_low3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="번"
-                android:textSize="20dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/litenum" />
         </LinearLayout>

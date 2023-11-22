@@ -8,6 +8,7 @@ public class ConcentrationAccount {
     private String low_count;
     private String studentnum;
     private String studentname;
+    private String percentage;
 
     public String getStudnetname() {
         return studentname;
@@ -67,5 +68,12 @@ public class ConcentrationAccount {
         this.studentnum = studentnum;
     }
 
+    public String getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(String percentage) {
+        this.percentage = percentage;
+    }
 
 }

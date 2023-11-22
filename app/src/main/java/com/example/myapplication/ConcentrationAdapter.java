@@ -43,9 +43,11 @@ public class ConcentrationAdapter extends RecyclerView.Adapter<ConcentrationAdap
         // 텍스트뷰에 의미 있는 텍스트 설정
         holder.studentname.setText(arrayList.get(position).getStudnetname());
         holder.studentnum.setText(arrayList.get(position).getStudentnum());
-        holder.high_count.setText(arrayList.get(position).getHigh_count());
-        holder.low_count.setText(arrayList.get(position).getLow_count());
-    }
+
+        // 백분율 계산 및 표시
+        String percentage = arrayList.get(position).getPercentage();
+        holder.concentration2.setText(percentage);
+        }
 
     @Override
     public int getItemCount() {
@@ -54,14 +56,13 @@ public class ConcentrationAdapter extends RecyclerView.Adapter<ConcentrationAdap
 
     public class ConcentrationViewHolder extends RecyclerView.ViewHolder {
 
-        TextView studentname, studentnum, high_count, low_count;
+        TextView studentname, studentnum, high_count, low_count, concentration2;
 
         public ConcentrationViewHolder(@NonNull View itemView) {
             super(itemView);
             this.studentname = itemView.findViewById(R.id.student_name2);
             this.studentnum = itemView.findViewById(R.id.student_num2);
-            this.high_count = itemView.findViewById(R.id.student_high2);
-            this.low_count = itemView.findViewById(R.id.student_low2);
+            this.concentration2 = itemView.findViewById(R.id.concentration2);
         }
     }
 }
